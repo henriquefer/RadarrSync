@@ -39,7 +39,7 @@ python RadarSync.py
 
 
 #### About this fork
-I only added support to differents root paths on both Radarr instances
+I only added support for differents root paths on both Radarr instances
  
  
  
