@@ -88,6 +88,8 @@ for server in Config.sections():
     for movie in radarrMovies.json():
         if movie['profileId'] == int(ConfigSectionMap(server)['profile']):
             if movie['tmdbId'] not in movieIds_to_syncserver:
+                npath = movie['path']
+                path = npath.replace(ConfigSectionMap(server)['current_path'], ConfigSectionMap(server)['new_path'])
                 logging.debug('title: {0}'.format(movie['title']))
                 logging.debug('qualityProfileId: {0}'.format(movie['qualityProfileId']))
                 logging.debug('titleSlug: {0}'.format(movie['titleSlug']))
@@ -103,7 +105,7 @@ for server in Config.sections():
                            'qualityProfileId': movie['qualityProfileId'],
                            'titleSlug': movie['titleSlug'],
                            'tmdbId': movie['tmdbId'],
-                           'path': movie['path'],
+                           'path': path,
                            'monitored': movie['monitored'],
                            'images': images,
                            'profileId': movie['profileId'],
