@@ -8,18 +8,19 @@ Radarr does not support saving files to different folder roots for different qua
 
 
 ### Configuration
- 1. Edit the Config.txt file and enter your servers URLs and API keys for each server.  
+ 1. Edit the Config.txt file and enter your servers URLs and API keys for each server. The current_path must be the root path of Radarr instance, and new_path the root path of Radarr4k instance.
 
     Example Config.txt:
     ```ini
     [Radarr]
     url = https://example.com:443
     key = FCKGW-RHQQ2-YXRKT-8TG6W-2B7Q8
-    current_path = /mnt/media/Movies/
     
     [Radarr4k]
     url = http://127.0.0.1:8080
     key = FCKGW-RHQQ2-YXRKT-8TG6W-2B7Q8
+    
+    current_path = /mnt/media/Movies/
     new_path = /mnt/media/Movies-4K/
     ```
  2. Edit 4K profile on the server that will download 1080/720p files.  You want the quality profile to download the highest non-4k quality your Plex server can stream with choking. 
